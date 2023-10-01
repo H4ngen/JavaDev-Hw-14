@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Редагування нотатки</title>
+</head>
+<body>
+<h1>Редагування нотатки</h1>
+<form method="post" action="/note/edit">
+    <input type="hidden" name="id" th:value="${note.id}">
+    <label for="title">Заголовок:</label>
+    <input type="text" id="title" name="title" th:value="${note.title}">
+    <br>
+    <label for="content">Контент:</label>
+    <textarea id="content" name="content" th:text="${note.content}"></textarea>
+    <br>
+    <button type="submit">Зберегти</button>
+</form>
+<a href="/note/list">Повернутися до списку</a>
+</body>
+</html>
